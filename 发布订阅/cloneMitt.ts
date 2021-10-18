@@ -39,7 +39,7 @@ export default function mitt<Events extends Record<EventType, unknown>>(
             if(handlers) {
                 handlers.push(handler)
             } else {
-                all!.set(type, [handler] as EventHandlerList<Events[keyof Events])
+                all!.set(type, [handler] as EventHandlerList<Events[keyof Events]>)
             }
         },
         off<Key extends keyof Events>(type: Key, handler?: GenericEventHandler) {
